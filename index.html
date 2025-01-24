@@ -6,9 +6,7 @@
     <meta name="description" content="&lt;model-viewer&gt; template" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="./assets/favicon/favicon.ico" />
-    <link type="text/css" href="./styles.css" rel="stylesheet" />
-
-    <!-- Open Graph Meta Tags -->
+    <link type="text/css" href="./src/styles.css" rel="stylesheet" />
     <meta property="og:title" content="Alice" />
     <meta
       property="og:description"
@@ -19,7 +17,8 @@
     <meta property="og:type" content="website" />
   </head>
   <body>
-    <!-- <model-viewer> HTML element -->
+    <!-- BY JAKUB KANNA -->
+
     <div id="model">
       <model-viewer
         src="./assets/ritaspillow_bezier-animation-test.gltf"
@@ -28,12 +27,17 @@
         autoplay
         ar-modes="webxr scene-viewer quick-look"
         tone-mapping="neutral"
-        poster="./assets/alice_10.jpg"
-        animation-name="Plane.003_final.001Action.003"
+        poster=".public/assets/alice_10.jpg"
         id="alice"
         camera-orbit="0deg 45deg 4m"
         animation-crossfade-duration="1000"
+        environment-image="neutral"
       >
+        <effect-composer render-mode="quality">
+          <outline-effect color="cyan" strength="1"></outline-effect>
+          <color-grade-effect blend-mode="darken"></color-grade-effect>
+        </effect-composer>
+
         <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
         </div>
@@ -50,11 +54,7 @@
       <section>c</section>
       <section>e</section>
     </div>
-    <script src="./script.js"></script>
-    <!-- Loads <model-viewer> for browsers: -->
-    <script
-      type="module"
-      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
-    ></script>
+
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
