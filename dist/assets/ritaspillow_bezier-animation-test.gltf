@@ -4,7 +4,11 @@
 		"version":"2.0"
 	},
 	"extensionsUsed":[
+		"KHR_draco_mesh_compression",
 		"KHR_materials_unlit"
+	],
+	"extensionsRequired":[
+		"KHR_draco_mesh_compression"
 	],
 	"scene":0,
 	"scenes":[
@@ -126,9 +130,12 @@
 			},
 			"name":"Material.002",
 			"pbrMetallicRoughness":{
-				"baseColorTexture":{
-					"index":0
-				},
+				"baseColorFactor":[
+					0.5,
+					0.5,
+					0.5,
+					1
+				],
 				"metallicFactor":0,
 				"roughnessFactor":0.9
 			}
@@ -144,8 +151,19 @@
 						"NORMAL":1,
 						"TEXCOORD_0":2
 					},
+					"extensions":{
+						"KHR_draco_mesh_compression":{
+							"bufferView":0,
+							"attributes":{
+								"POSITION":0,
+								"NORMAL":1,
+								"TEXCOORD_0":2
+							}
+						}
+					},
 					"indices":3,
-					"material":0
+					"material":0,
+					"mode":4
 				}
 			]
 		},
@@ -158,27 +176,24 @@
 						"NORMAL":5,
 						"TEXCOORD_0":6
 					},
-					"indices":7
+					"extensions":{
+						"KHR_draco_mesh_compression":{
+							"bufferView":1,
+							"attributes":{
+								"POSITION":0,
+								"NORMAL":1,
+								"TEXCOORD_0":2
+							}
+						}
+					},
+					"indices":7,
+					"mode":4
 				}
 			]
 		}
 	],
-	"textures":[
-		{
-			"sampler":0,
-			"source":0
-		}
-	],
-	"images":[
-		{
-			"mimeType":"image/png",
-			"name":"Alice_RitaBorralhoSilva",
-			"uri":"Alice_RitaBorralhoSilva.png"
-		}
-	],
 	"accessors":[
 		{
-			"bufferView":0,
 			"componentType":5126,
 			"count":192,
 			"max":[
@@ -194,25 +209,21 @@
 			"type":"VEC3"
 		},
 		{
-			"bufferView":1,
 			"componentType":5126,
 			"count":192,
 			"type":"VEC3"
 		},
 		{
-			"bufferView":2,
 			"componentType":5126,
 			"count":192,
 			"type":"VEC2"
 		},
 		{
-			"bufferView":3,
 			"componentType":5123,
 			"count":372,
 			"type":"SCALAR"
 		},
 		{
-			"bufferView":4,
 			"componentType":5126,
 			"count":12049,
 			"max":[
@@ -228,25 +239,22 @@
 			"type":"VEC3"
 		},
 		{
-			"bufferView":5,
 			"componentType":5126,
 			"count":12049,
 			"type":"VEC3"
 		},
 		{
-			"bufferView":6,
 			"componentType":5126,
 			"count":12049,
 			"type":"VEC2"
 		},
 		{
-			"bufferView":7,
 			"componentType":5123,
 			"count":69792,
 			"type":"SCALAR"
 		},
 		{
-			"bufferView":8,
+			"bufferView":2,
 			"componentType":5126,
 			"count":121,
 			"max":[
@@ -258,19 +266,19 @@
 			"type":"SCALAR"
 		},
 		{
-			"bufferView":9,
+			"bufferView":3,
 			"componentType":5126,
 			"count":121,
 			"type":"VEC3"
 		},
 		{
-			"bufferView":10,
+			"bufferView":4,
 			"componentType":5126,
 			"count":121,
 			"type":"VEC4"
 		},
 		{
-			"bufferView":11,
+			"bufferView":5,
 			"componentType":5126,
 			"count":2,
 			"max":[
@@ -282,13 +290,13 @@
 			"type":"SCALAR"
 		},
 		{
-			"bufferView":12,
+			"bufferView":6,
 			"componentType":5126,
 			"count":2,
 			"type":"VEC3"
 		},
 		{
-			"bufferView":13,
+			"bufferView":7,
 			"componentType":5126,
 			"count":121,
 			"type":"VEC4"
@@ -297,92 +305,48 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":2304,
-			"byteOffset":0,
-			"target":34962
+			"byteLength":1291,
+			"byteOffset":0
 		},
 		{
 			"buffer":0,
-			"byteLength":2304,
-			"byteOffset":2304,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":1536,
-			"byteOffset":4608,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":744,
-			"byteOffset":6144,
-			"target":34963
-		},
-		{
-			"buffer":0,
-			"byteLength":144588,
-			"byteOffset":6888,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":144588,
-			"byteOffset":151476,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":96392,
-			"byteOffset":296064,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":139584,
-			"byteOffset":392456,
-			"target":34963
+			"byteLength":55961,
+			"byteOffset":1292
 		},
 		{
 			"buffer":0,
 			"byteLength":484,
-			"byteOffset":532040
+			"byteOffset":57256
 		},
 		{
 			"buffer":0,
 			"byteLength":1452,
-			"byteOffset":532524
+			"byteOffset":57740
 		},
 		{
 			"buffer":0,
 			"byteLength":1936,
-			"byteOffset":533976
+			"byteOffset":59192
 		},
 		{
 			"buffer":0,
 			"byteLength":8,
-			"byteOffset":535912
+			"byteOffset":61128
 		},
 		{
 			"buffer":0,
 			"byteLength":24,
-			"byteOffset":535920
+			"byteOffset":61136
 		},
 		{
 			"buffer":0,
 			"byteLength":1936,
-			"byteOffset":535944
-		}
-	],
-	"samplers":[
-		{
-			"magFilter":9729,
-			"minFilter":9987
+			"byteOffset":61160
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":537880,
+			"byteLength":63096,
 			"uri":"ritaspillow_bezier-animation-test.bin"
 		}
 	]
