@@ -23,7 +23,7 @@ const onProgress = (event) => {
 
 const onStart = () => {
   modelViewer.animationName = "Plane.003_final.001Action.003";
-  modelViewer.play();
+  modelViewer.currentTime = 0;
 };
 
 const onStop = () => {
@@ -32,8 +32,8 @@ const onStop = () => {
 
 // Initialize <model-viewer> and buttons
 document.addEventListener("DOMContentLoaded", () => {
-  if (!modelViewer || !playButton || !pauseButton) {
-    console.warn("Required elements (model-viewer or buttons) are missing.");
+  if (!modelViewer) {
+    console.warn("Required elements (model-viewer) are missing.");
     return;
   }
 

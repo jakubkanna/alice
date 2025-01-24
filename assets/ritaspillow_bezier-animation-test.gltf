@@ -83,7 +83,7 @@
 					}
 				}
 			],
-			"name":"Plane.003_final.001Action.003",
+			"name":"Plane.003_final.001Action.001",
 			"samplers":[
 				{
 					"input":8,
@@ -118,49 +118,6 @@
 					"input":8,
 					"interpolation":"LINEAR",
 					"output":12
-				}
-			]
-		},
-		{
-			"channels":[
-				{
-					"sampler":0,
-					"target":{
-						"node":0,
-						"path":"translation"
-					}
-				},
-				{
-					"sampler":1,
-					"target":{
-						"node":0,
-						"path":"rotation"
-					}
-				},
-				{
-					"sampler":2,
-					"target":{
-						"node":0,
-						"path":"scale"
-					}
-				}
-			],
-			"name":"CylinderAction.001",
-			"samplers":[
-				{
-					"input":13,
-					"interpolation":"LINEAR",
-					"output":14
-				},
-				{
-					"input":13,
-					"interpolation":"LINEAR",
-					"output":15
-				},
-				{
-					"input":13,
-					"interpolation":"LINEAR",
-					"output":16
 				}
 			]
 		}
@@ -271,13 +228,13 @@
 			"count":12049,
 			"max":[
 				0.7270795106887817,
-				0.19502943754196167,
-				0.7354164719581604
+				0.1950186789035797,
+				0.7354111075401306
 			],
 			"min":[
 				-0.724131166934967,
-				-0.16247239708900452,
-				-0.7308816909790039
+				-0.1625005304813385,
+				-0.7308886051177979
 			],
 			"type":"VEC3"
 		},
@@ -331,36 +288,6 @@
 			"componentType":5126,
 			"count":121,
 			"type":"VEC4"
-		},
-		{
-			"bufferView":7,
-			"componentType":5126,
-			"count":241,
-			"max":[
-				8
-			],
-			"min":[
-				0
-			],
-			"type":"SCALAR"
-		},
-		{
-			"bufferView":8,
-			"componentType":5126,
-			"count":241,
-			"type":"VEC3"
-		},
-		{
-			"bufferView":9,
-			"componentType":5126,
-			"count":241,
-			"type":"VEC4"
-		},
-		{
-			"bufferView":10,
-			"componentType":5126,
-			"count":241,
-			"type":"VEC3"
 		}
 	],
 	"bufferViews":[
@@ -371,58 +298,38 @@
 		},
 		{
 			"buffer":0,
-			"byteLength":55952,
+			"byteLength":55961,
 			"byteOffset":1212
 		},
 		{
 			"buffer":0,
 			"byteLength":484,
-			"byteOffset":57164
+			"byteOffset":57176
 		},
 		{
 			"buffer":0,
 			"byteLength":1452,
-			"byteOffset":57648
+			"byteOffset":57660
 		},
 		{
 			"buffer":0,
 			"byteLength":1936,
-			"byteOffset":59100
+			"byteOffset":59112
 		},
 		{
 			"buffer":0,
 			"byteLength":1452,
-			"byteOffset":61036
+			"byteOffset":61048
 		},
 		{
 			"buffer":0,
 			"byteLength":1936,
-			"byteOffset":62488
-		},
-		{
-			"buffer":0,
-			"byteLength":964,
-			"byteOffset":64424
-		},
-		{
-			"buffer":0,
-			"byteLength":2892,
-			"byteOffset":65388
-		},
-		{
-			"buffer":0,
-			"byteLength":3856,
-			"byteOffset":68280
-		},
-		{
-			"buffer":0,
-			"byteLength":2892,
-			"byteOffset":72136
+			"byteOffset":62500
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":75028,
+			"byteLength":64436,
 			"uri":"ritaspillow_bezier-animation-test.bin"
 		}
 	]
