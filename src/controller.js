@@ -1,16 +1,13 @@
+import onClick from "./onClick";
 import onLoad from "./onLoad";
 import onProgress from "./onProgress";
 import onScroll from "./onScroll";
 
-export const view = (modelViewer) => {
-  if (!modelViewer) {
-    console.warn("Required elements (model-viewer) are missing.");
-    return;
-  }
-
+export const controller = (modelViewer) => {
   onProgress(modelViewer);
   onLoad(modelViewer);
   onScroll(modelViewer);
+  onClick();
 };
 
-export default view;
+export default controller;

@@ -146,3 +146,18 @@ section:first-of-type {
 .blur {
   filter: blur(44px);
 }
+
+.Hotspot {
+  background-color: transparent;
+  padding: 2rem;
+  border: none;
+  cursor: pointer;
+}
+.HotspotAnnotation {
+  display: none;
+}
+
+/* .Hotspot:hover {
+  border: 1px solid white;
+  border-radius: 100%;
+} */

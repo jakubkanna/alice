@@ -9,47 +9,7 @@ export default function onLoad(modelViewer) {
     materials[1].pbrMetallicRoughness.setBaseColorFactor(ritasColor);
     materials[1].pbrMetallicRoughness.setRoughnessFactor(0.6);
 
-    // interactive
-
-    const effectComposer = document.querySelector("effect-composer");
-    const effect = effectComposer.children[0];
-
-    let clickListenerAdded = false;
-
-    const trackMouseMovement = (event) => {
-      const material = modelViewer.materialFromPoint(
-        event.clientX,
-        event.clientY
-      );
-
-      // Get the modelViewer element
-      const modelViewerElement = modelViewer; // or document.getElementById('your-element-id')
-
-      if (material != null) {
-        effect.blendMode = "default";
-
-        // Change cursor to pointer when hovering over the material
-        modelViewerElement.style.cursor = "pointer";
-
-        // Add the click listener only once
-        if (!clickListenerAdded) {
-          modelViewer.addEventListener("click", () => {
-            alert("Hello World!");
-          });
-          clickListenerAdded = true;
-        }
-      } else {
-        effect.blendMode = "skip";
-
-        // Reset cursor when not hovering over a clickable material
-        modelViewerElement.style.cursor = "default";
-      }
-    };
-
-    document.addEventListener("mousemove", trackMouseMovement);
-
     // set video texture
-
     const videoTexture = modelViewer.createVideoTexture(
       "/alice/assets/Alice_RitaBorralhoSilva.mp4"
     );
