@@ -19,14 +19,16 @@
     <meta property="og:type" content="website" />
   </head>
   <body>
-    <!-- <model-viewer> HTML element -->
+    <!-- <model-viewer> HTML element --><button id="play">play</button>
+    <button id="pause">pause</button>
     <model-viewer
-      src="./assets/ritaspillow.glb"
+      src="./assets/ritaspillow_bezier-animation-test.gltf"
       ar
       ar-modes="webxr scene-viewer quick-look"
-      camera-controls
       tone-mapping="neutral"
       poster="./assets/alice_10.jpg"
+      animation-name="Plane.003_final.001Action.003"
+      id="alice"
     >
       <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
