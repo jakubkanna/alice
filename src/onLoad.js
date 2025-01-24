@@ -51,7 +51,7 @@ export default function onLoad(modelViewer) {
     // set video texture
 
     const videoTexture = modelViewer.createVideoTexture(
-      "./assets/Alice_RitaBorralhoSilva.mp4"
+      "/alice/assets/Alice_RitaBorralhoSilva.mp4"
     );
 
     const material = materials[0];
