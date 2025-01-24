@@ -1,3 +1,7 @@
+const modelViewer = document.getElementById("alice");
+const playButton = document.getElementById("play");
+const pauseButton = document.getElementById("pause");
+
 // Handles loading events for <model-viewer>'s slotted progress bar
 const onProgress = (event) => {
   const progressBar = event.target.querySelector(".progress-bar");
@@ -8,6 +12,7 @@ const onProgress = (event) => {
   const progress = event.detail.totalProgress;
   updatingBar.style.width = `${progress * 100}%`;
 
+  // Hide progress bar and remove event listener when loading is complete
   if (progress === 1) {
     progressBar.classList.add("hide");
     event.target.removeEventListener("progress", onProgress);
@@ -16,12 +21,17 @@ const onProgress = (event) => {
   }
 };
 
+const onStart = () => {
+  modelViewer.animationName = "Plane.003_final.001Action.003";
+  modelViewer.play();
+};
+
+const onStop = () => {
+  modelViewer.animationName = "rotation";
+};
+
 // Initialize <model-viewer> and buttons
 document.addEventListener("DOMContentLoaded", () => {
-  const modelViewer = document.getElementById("alice");
-  const playButton = document.getElementById("play");
-  const pauseButton = document.getElementById("pause");
-
   if (!modelViewer || !playButton || !pauseButton) {
     console.warn("Required elements (model-viewer or buttons) are missing.");
     return;
@@ -30,25 +40,40 @@ document.addEventListener("DOMContentLoaded", () => {
   // Attach progress event listener
   modelViewer.addEventListener("progress", onProgress);
 
-  // Play button event
-  playButton.addEventListener("click", async () => {
-    modelViewer.play();
-  });
-
-  // Pause button event
-  pauseButton.addEventListener("click", async () => {
-    modelViewer.pause();
-  });
-
   // Change the default material once the model is loaded
   modelViewer.addEventListener("load", () => {
     const ritasColor = "#b9d1db";
-    const materials = modelViewer.model.materials;
+    const { materials } = modelViewer.model;
+    modelViewer.timeScale = 0.25;
 
     materials.forEach((material) => {
-      material.name == "Default" &&
+      if (material.name === "Default") {
         material.pbrMetallicRoughness.setBaseColorFactor(ritasColor);
-      material.pbrMetallicRoughness.setRoughnessFactor(0.6);
+        material.pbrMetallicRoughness.setRoughnessFactor(0.6);
+      }
     });
+  });
+
+  // scroll events
+
+  let hasLogged = false; // Flag to ensure 'bang' is logged only once
+
+  window.addEventListener("scroll", () => {
+    // Get the current scroll position
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    // Get the viewport height in pixels (100dvh is 100% of the viewport height)
+    const viewportHeight = window.innerHeight;
+    const breakpoint = viewportHeight / 100;
+
+    // Check if the scroll position is equal to or greater than 100dvh and 'bang' hasn't been logged yet
+    if (scrollTop >= breakpoint && !hasLogged) {
+      document.getElementById("model").classList.add("blur");
+      hasLogged = true; // Set the flag to true after logging
+      onStart();
+    } else if (scrollTop < breakpoint && hasLogged) {
+      document.getElementById("model").classList.remove("blur");
+      hasLogged = false; // Reset the flag to false
+      onStop();
+    }
   });
 });
